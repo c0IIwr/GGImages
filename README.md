@@ -1,5 +1,5 @@
-# GGExtraEmotes
-Расширение для Google Chrome. Добавляет анимированные эмодзи для https://goodgame.ru  
+# GGImages
+Расширение для Google Chrome. Добавляет анимированные эмодзи для <a href="https://goodgame.ru">goodgame.ru</a>  
   
 <img  src="https://c0IIwr.github.io/GGExtraEmotes/preview.gif">  
 
@@ -8,7 +8,7 @@
 2. Перейдите на страницу chrome://extensions  
 3. Включите режим разработчика  
 4. Нажимите 'Загрузить распакованное расширение' и выберите ранее распакованную папку 'chrome_extension'
-5. Уберите галочку 'Новый канал' в бета профиле https://goodgame.ru/user/beta
+5. Уберите галочку 'Новый канал' в бета профиле <a href="https://goodgame.ru/user/beta">goodgame.ru/user/beta</a>
 
 ## Включаем отображение картинок  
 1. Нажмите 'Меню чата' и выберите 'Настройки чата'
