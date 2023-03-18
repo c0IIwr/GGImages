@@ -1,6 +1,6 @@
 (async () =>
 {
-	const EMOTES_URL = "https://c0IIwr.github.io/GGExtraEmotes/emotes/";
+	const EMOTES_URL = "https://c0IIwr.github.io/GGImages/emotes/";
 	const extraemotes_urls = await GetEmotesUrls();
 	InfinityAddNickClickEvent();
 	InfinityAddCustomInput();
@@ -14,7 +14,7 @@
 
 	async function InfinityAddCustomInput()
 	{
-		if (!document.getElementById("ggextraemotes_msg_input"))
+		if (!document.getElementById("ggimages_msg_input"))
 		{
 			await AddCustomInput();
 		}
@@ -34,12 +34,12 @@
 		var chat_users = chat_section.getElementsByTagName("chat-user");
 		for (var i = 0; i < chat_users.length; i++)
 		{
-			if (chat_users[i].getAttribute("ggextraemotes_has_event")) { continue; }
-			chat_users[i].setAttribute("ggextraemotes_has_event", true);
+			if (chat_users[i].getAttribute("ggimages_has_event")) { continue; }
+			chat_users[i].setAttribute("ggimages_has_event", true);
 			var nickname = Replace(chat_users[i].innerText, " ", "");
 			chat_users[i].onclick = function()
 			{
-				var custom_input = document.getElementById("ggextraemotes_msg_input");
+				var custom_input = document.getElementById("ggimages_msg_input");
 				custom_input.innerHTML += "&nbsp;" + this + ',&nbsp;';
 			}.bind(nickname);
 		}
@@ -50,8 +50,8 @@
 		const text_block = await GetElementByXPath('//div[@class="chat-control-block"]//div[@class="text-block ng-scope"]');
 		const source_textarea = await GetElementByXPath('//div[@class="chat-control-block"]//div[@class="textarea"]');
 		source_textarea.style = "display: none";
-		const ggextraemotes_msg_input = CreateGGExtraEmotesMsgInput();
-		text_block.prepend(ggextraemotes_msg_input);
+		const ggimages_msg_input = CreateGGImagesMsgInput();
+		text_block.prepend(ggimages_msg_input);
 		const observer = new MutationObserver(function(mutations)
 		{
 			for (var i = 0; i < mutations.length; i++)
@@ -62,12 +62,12 @@
 				if (!element) { continue; }
 				if (!IsHTMLElement(element)) { continue; }
 				smile_div.append(element);
-				ggextraemotes_msg_input.append(smile_div);
+				ggimages_msg_input.append(smile_div);
 			}
 		});
 		observer.observe(source_textarea, { childList: true, subtree: true });
 
-		ggextraemotes_msg_input.onpaste = function(clipboard_event)
+		ggimages_msg_input.onpaste = function(clipboard_event)
 		{
 			return InsertTextOnly(clipboard_event);
 
@@ -83,14 +83,14 @@
 				return false;
 			}
 		}
-		ggextraemotes_msg_input.onkeyup = function(keyboard_event)
+		ggimages_msg_input.onkeyup = function(keyboard_event)
 		{
 			if (keyboard_event.keyCode != 13) { return; }
 			keyboard_event.preventDefault();
-			const text = ReplaceHTMLWithText(ggextraemotes_msg_input.innerHTML);
+			const text = ReplaceHTMLWithText(ggimages_msg_input.innerHTML);
 			if (text.indexOf("<") > -1 && text.indexOf(">") > -1)
 			{
-				alert("В отправленном сообщении обнаружены символы '<' и '>', это может означать, что сообщение содержит html-код. Пожалуйста, уберите их из сообщения. Если вы их не писали, то это означает, что расширение сломалось. Отключите расширение GGExtraEmotes и перезагрузите страницу.");
+				alert("В отправленном сообщении обнаружены символы '<' и '>', это может означать, что сообщение содержит html-код. Пожалуйста, уберите их из сообщения. Если вы их не писали, то это означает, что расширение сломалось. Отключите расширение GGImages и перезагрузите страницу.");
 				return false;
 			}
 			SendMessage(text);
@@ -141,19 +141,19 @@
 					bubbles: false,
 					cancelable: false
 				}));
-				ggextraemotes_msg_input.innerHTML = "";
-				setTimeout(function() { ggextraemotes_msg_input.innerHTML = "" }, 100);
+				ggimages_msg_input.innerHTML = "";
+				setTimeout(function() { ggimages_msg_input.innerHTML = "" }, 100);
 			}
 		}
 
-		function CreateGGExtraEmotesMsgInput()
+		function CreateGGImagesMsgInput()
 		{
-			const ggextraemotes_msg_input = document.createElement("div");
-			ggextraemotes_msg_input.id = "ggextraemotes_msg_input";
-			ggextraemotes_msg_input.className = "textarea";
-			ggextraemotes_msg_input.setAttribute("contenteditable", true);
-			ggextraemotes_msg_input.setAttribute("placeholder", "Написать сообщение...");
-			return ggextraemotes_msg_input;
+			const ggimages_msg_input = document.createElement("div");
+			ggimages_msg_input.id = "ggimages_msg_input";
+			ggimages_msg_input.className = "textarea";
+			ggimages_msg_input.setAttribute("contenteditable", true);
+			ggimages_msg_input.setAttribute("placeholder", "Написать сообщение...");
+			return ggimages_msg_input;
 		}
 	}
 
@@ -168,7 +168,7 @@
 			emoji.className = "ggextraemote";
 			emoji.onclick = function()
 			{
-				var custom_input = document.getElementById("ggextraemotes_msg_input");
+				var custom_input = document.getElementById("ggimages_msg_input");
 				custom_input.innerHTML += '<img class="ggextraemote_in_input" src="' + this + '">';
 			}.bind(extraemotes_urls[i]);
 			smile_list.prepend(emoji);
@@ -199,7 +199,7 @@
 				{
 					const emotes_urls = await Get(
 					{
-						url: "https://c0IIwr.github.io/GGExtraEmotes/list.txt",
+						url: "https://c0IIwr.github.io/GGImages/list.txt",
 						from_cache: false,
 			 			max_attempts: 5,
 			 			retry_ms: 1000,
@@ -248,7 +248,7 @@
 					console.log(err);
 					if (attempts_used >= max_attempts)
 					{
-						return reject(new Error("[GGExtraEmotes] Maximum number of attempts reached in Get('" + url + ", " + from_cache + ", " + max_attempts + ", " + retry_ms + ", " + timeout_ms + ")"));
+						return reject(new Error("[GGImages] Maximum number of attempts reached in Get('" + url + ", " + from_cache + ", " + max_attempts + ", " + retry_ms + ", " + timeout_ms + ")"));
 					}
 					setTimeout(GetWithRepeat, retry_ms);
 				}
@@ -264,7 +264,7 @@
 				{
 					if (response.status >= 400 && response.status < 600)
 					{
-						throw new Error("[GGExtraEmotes] InnerGet('" + url + "', " + from_cache + ", " + timeout_ms + ") return status: " + response.status);
+						throw new Error("[GGImages] InnerGet('" + url + "', " + from_cache + ", " + timeout_ms + ") return status: " + response.status);
 					}
 					return await response.text();
 				}).catch(function(err) { throw new Error(err); });
@@ -276,7 +276,7 @@
 	{
 		if (b.indexOf(a) > -1)
 		{
-			throw new Error("[GGExtraEmotes] InfinityReplaces in Replace('" + str + "', '" + a + "', '" + b + "')");
+			throw new Error("[GGImages] InfinityReplaces in Replace('" + str + "', '" + a + "', '" + b + "')");
 		}
 		var new_str = CopyStrByValue(str);
 		while (new_str.indexOf(a) > -1)
