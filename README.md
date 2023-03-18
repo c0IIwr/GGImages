@@ -8,6 +8,9 @@
 2. Перейдите на страницу chrome://extensions/  
 3. Включите режим разработчика  
 4. Нажимите 'Загрузить распакованное расширение' и выберите ранее распакованную папку 'chrome_extension'
+5. Убрать галочку в бета профиле <a href=https://goodgame.ru/user/beta//>goodgame.ru/user/beta</a>
+
+<img  src="https://c0IIwr.github.io/GGExtraEmotes/beta.png">
 
 ## Включаем отображение картинок  
 1. Нажмите 'Меню чата' и выберите 'Настройки чата'
