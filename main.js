@@ -111,7 +111,7 @@
 				text = Replace(text, "\t", "");
 				for (var i = 0; i < extraemotes_urls.length; i++)
 				{
-					const replace = '<img class="ggextraemote_in_input" src="' + extraemotes_urls[i] + '">';
+					const replace = '<img class="ggimage_in_input" src="' + extraemotes_urls[i] + '">';
 					text = Replace(text, replace, ' ' + extraemotes_urls[i] + ' ');
 				}
 				const emotes = text.split("<divforemote");
@@ -160,16 +160,16 @@
 	async function AddEmojis()
 	{
 		var smile_list = await GetElementByXPath('//*[@id="smiles"]//div[@class="smile-list"]');
-		if (smile_list.getElementsByClassName("ggextraemote")[0]) { return; }
+		if (smile_list.getElementsByClassName("ggimage")[0]) { return; }
 		for (var i = 0; i < extraemotes_urls.length; i++)
 		{
 			var emoji = document.createElement("img");
 			emoji.src = extraemotes_urls[i];
-			emoji.className = "ggextraemote";
+			emoji.className = "ggimage";
 			emoji.onclick = function()
 			{
 				var custom_input = document.getElementById("ggimages_msg_input");
-				custom_input.innerHTML += '<img class="ggextraemote_in_input" src="' + this + '">';
+				custom_input.innerHTML += '<img class="ggimage_in_input" src="' + this + '">';
 			}.bind(extraemotes_urls[i]);
 			smile_list.prepend(emoji);
 		}
