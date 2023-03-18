@@ -5,10 +5,10 @@
 
 ## Установка  
 1. <a href="https://github.com/c0IIwr/GGExtraEmotes/archive/refs/heads/main.zip">Скачайте архив с расширением</a> и распакуйте папку 'chrome_extension'
-2. Перейдите на страницу chrome://extensions/  
+2. Перейдите на страницу chrome://extensions  
 3. Включите режим разработчика  
 4. Нажимите 'Загрузить распакованное расширение' и выберите ранее распакованную папку 'chrome_extension'
-5. Убрать галочку в бета профиле https://goodgame.ru/user/beta
+5. Уберите галочку 'Новый канал' в бета профиле https://goodgame.ru/user/beta
 
 <img  src="https://c0IIwr.github.io/GGExtraEmotes/beta.png">
 
