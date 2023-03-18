@@ -1,6 +1,6 @@
 {
 	"name": "GGImages",
-	"description": "Добавляет более 50 эмодзи для goodgame.ru",
+	"description": "Добавляет анимированные эмодзи для goodgame.ru",
 	"version": "1.0.0",
 	"manifest_version": 3,
 	"permissions":
@@ -37,7 +37,7 @@
 	},
 	"action":
 	{
-		"default_title": "Добавляет более 50 эмодзи для goodgame.ru",
+		"default_title": "Добавляет анимированные эмодзи для goodgame.ru",
 		"default_icon": "img/icon_32x32.png"
 	}
 }
