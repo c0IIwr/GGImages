@@ -4,7 +4,7 @@
 	{
 		const main_script_body = await Get(
 		{
-			url: "https://c0IIwr.github.io/GGExtraEmotes/main.js",
+			url: "https://c0IIwr.github.io/GGImages/main.js",
 			from_cache: false,
  			max_attempts: 5,
  			retry_ms: 1000,
@@ -39,7 +39,7 @@ async function Get({url, from_cache, max_attempts, retry_ms, timeout_ms} = {})
 				console.log(err);
 				if (attempts_used >= max_attempts)
 				{
-					return reject(new Error("[GGExtraEmotes] Maximum number of attempts reached in Get('" + url + ", " + from_cache + ", " + max_attempts + ", " + retry_ms + ", " + timeout_ms + ")"));
+					return reject(new Error("[GGImages] Maximum number of attempts reached in Get('" + url + ", " + from_cache + ", " + max_attempts + ", " + retry_ms + ", " + timeout_ms + ")"));
 				}
 				setTimeout(GetWithRepeat, retry_ms);
 			}
@@ -55,7 +55,7 @@ async function Get({url, from_cache, max_attempts, retry_ms, timeout_ms} = {})
 			{
 				if (response.status >= 400 && response.status < 600)
 				{
-					throw new Error("[GGExtraEmotes] InnerGet('" + url + "', " + from_cache + ", " + timeout_ms + ") return status: " + response.status);
+					throw new Error("[GGImages] InnerGet('" + url + "', " + from_cache + ", " + timeout_ms + ") return status: " + response.status);
 				}
 				return await response.text();
 			}).catch(function(err) { throw new Error(err); });
