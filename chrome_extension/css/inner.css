@@ -1,9 +1,9 @@
-.ggextraemote
+.ggimages
 {
 	padding: 7px;
 	cursor: pointer;
 }
-.ggextraemote:hover
+.ggimages:hover
 {
 	background-color: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
@@ -13,7 +13,7 @@ divforemote img.smile
 	margin-left: 7px;
 	margin-right: 7px; 
 }
-.ggextraemote_in_input
+.ggimages_in_input
 {
 	margin-left: 7px;
 	margin-right: 7px; 
