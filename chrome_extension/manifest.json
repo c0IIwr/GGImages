@@ -14,7 +14,7 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["*://goodgame.ru/channel/*"],
+			"matches": ["*://goodgame.ru/*"],
 			"js": ["js/inject.js"],
 			"css": ["css/inner.css"],
 			"run_at": "document_start"
