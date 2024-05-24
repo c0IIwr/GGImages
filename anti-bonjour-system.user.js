@@ -1,11 +1,9 @@
 // ==UserScript==
 // @name         anti-bonjour-system
-// @namespace    https://github.com/
 // @version      0.1
 // @description  Отображает удаленные сообщения на goodgame.ru
 // @author       c0IIwr
 // @match        https://goodgame.ru/*
-// @grant        none
 // ==/UserScript==
 
 (function() {
