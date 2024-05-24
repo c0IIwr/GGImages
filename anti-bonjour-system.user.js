@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         anti-bonjour-system
-// @version      0.2
-// @description  Отображает удаленные сообщения на goodgame.ru
+// @version      0.1
+// @description  Отображает удаленные сообщения на гг
 // @author       c0IIwr
 // @match        https://goodgame.ru/*
 // ==/UserScript==
